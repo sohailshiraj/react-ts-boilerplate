@@ -31,4 +31,14 @@ const SomeDiv = styled.div`
     display: block
   }
 `;
+
+or
+
+const SomeDiv = styled('div')`
+  display: flex;
+  ....
+  ${media.medium} {
+    display: block
+  }
+`;
 */

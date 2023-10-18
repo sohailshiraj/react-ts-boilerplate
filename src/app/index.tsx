@@ -11,6 +11,7 @@ import { Helmet } from 'react-helmet-async';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import { GlobalStyle } from 'styles/global-styles';
+import { Global } from '@emotion/react';
 
 import { HomePage } from './pages/HomePage/Loadable';
 import { NotFoundPage } from './components/NotFoundPage/Loadable';
@@ -35,7 +36,7 @@ export function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
-      <GlobalStyle />
+      <Global styles={GlobalStyle}></Global>
     </BrowserRouter>
   );
 }

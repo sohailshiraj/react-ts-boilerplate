@@ -9,7 +9,7 @@ import React, { memo } from 'react';
 import * as React from 'react';
 {{/if}}
 {{#if wantStyledComponents}}
-import styled from 'styled-components/macro';
+import { styled } from '@mui/material/styles';
 {{/if}}
 {{#if wantTranslations}}
 import { useTranslation } from 'react-i18next';
@@ -52,5 +52,5 @@ export function {{ properCase componentName }}(props: Props) {
 {{/if}}
 
 {{#if wantStyledComponents}}
-const Div = styled.div``;
+const Div = styled('div')``;
 {{/if}}

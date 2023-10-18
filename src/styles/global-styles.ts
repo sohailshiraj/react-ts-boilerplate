@@ -1,6 +1,6 @@
-import { createGlobalStyle } from 'styled-components';
+import { css } from '@emotion/react';
 
-export const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = css`
   html,
   body {
     height: 100%;
@@ -22,7 +22,8 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 1.5em;
   }
 
-  input, select {
+  input,
+  select {
     font-family: inherit;
     font-size: inherit;
   }

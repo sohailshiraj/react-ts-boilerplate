@@ -2,8 +2,9 @@ import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import { P } from './P';
 import { Helmet } from 'react-helmet-async';
+import { lazyLoad } from 'utils/loadable';
 
-export function NotFoundPage() {
+export function NotFound() {
   return (
     <>
       <Helmet>
@@ -23,6 +24,11 @@ export function NotFoundPage() {
     </>
   );
 }
+
+export const NotFoundPage = lazyLoad(
+  () => import('.'),
+  module => module.NotFound,
+);
 
 const Wrapper = styled('div')`
   height: 100vh;

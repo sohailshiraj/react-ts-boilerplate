@@ -1,4 +1,4 @@
-import styled from 'styled-components/macro';
+import { styled } from '@mui/material/styles';
 
 export const P = styled('p')`
   font-size: 1rem;

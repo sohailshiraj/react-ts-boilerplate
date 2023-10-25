@@ -6,21 +6,18 @@
  * contain code that should be seen on all pages. (e.g. navigation bar)
  */
 
-import * as React from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
 import { GlobalStyle } from 'styles/global-styles';
 import { Global } from '@emotion/react';
-
-import { HomePage } from './pages/HomePage';
-import { NotFoundPage } from './components/NotFoundPage';
 import { useTranslation } from 'react-i18next';
+import AuthProvider from './provider/AuthProvider';
+import Routes from './routes';
 
 export function App() {
   const { i18n } = useTranslation();
   return (
-    <BrowserRouter>
+    <>
       <Helmet
         titleTemplate="%s - aqcess"
         defaultTitle="aqcess - softwareq Inc."
@@ -31,12 +28,14 @@ export function App() {
           content="aqcess: accessing quantum computing - easy, smart, simple"
         />
       </Helmet>
-
-      <Routes>
+      {/*<Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="*" element={<NotFoundPage />} />
-      </Routes>
+      </Routes>*/}
+      <AuthProvider>
+        <Routes />
+      </AuthProvider>
       <Global styles={GlobalStyle}></Global>
-    </BrowserRouter>
+    </>
   );
 }
